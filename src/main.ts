@@ -10,7 +10,6 @@ async function bootstrap() {
     .setDescription('project for practice')
     .setVersion('1.0')
     .addServer('http://localhost:3000/', '로컬 환경')
-    .addTag('practice')
     .build();
 
   const document = SwaggerModule.createDocument(app, options);
@@ -18,4 +17,4 @@ async function bootstrap() {
 
   await app.listen(process.env.PORT ?? 3000);
 }
-bootstrap();
+bootstrap().catch(console.error);
